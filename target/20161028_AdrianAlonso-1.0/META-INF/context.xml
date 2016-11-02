@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" docBase="bdaves" path="/20161028_AdrianAlonso">
+    <Resource
+        name="jdbc/bdaves"
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxActive="100"
+        maxIdle="30"
+        maxWait="10000"
+        username="java2017"
+        password="2017"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/pruebasjava?autoReconnect=true"
+    />
+</Context>

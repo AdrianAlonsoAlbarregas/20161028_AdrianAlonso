@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ContrEnlaces</servlet-name>
+        <servlet-class>es.albarregas.controlador.ContrEnlaces</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContrInsertar</servlet-name>
+        <servlet-class>es.albarregas.controlador.ContrInsertar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContrActualizacion</servlet-name>
+        <servlet-class>es.albarregas.controlador.ContrActualizacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContrVuelta</servlet-name>
+        <servlet-class>es.albarregas.controlador.ContrVuelta</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContrEnlaces</servlet-name>
+        <url-pattern>/ContrEnlaces</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContrInsertar</servlet-name>
+        <url-pattern>/ContrInsertar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContrActualizacion</servlet-name>
+        <url-pattern>/ContrActualizacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContrVuelta</servlet-name>
+        <url-pattern>/ContrVuelta</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <resource-ref>
+        <description>Conexion BD</description>
+        <res-ref-name> jdbc/bdaves</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+</web-app>
