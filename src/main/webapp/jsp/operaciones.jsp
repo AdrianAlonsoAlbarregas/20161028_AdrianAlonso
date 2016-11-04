@@ -16,6 +16,7 @@
         <link rel="stylesheet" href=<%request.getContextPath();%>"estilo.css">
         <title>Operaciones</title>
     </head>
+<%-- TIENES QUE MAQUETAR MEJOR EL CONTENIDO DE LA PÁGINA --%>
     <body>
         <div class="lista">
             <h2>Lista de entradas en la base de datos:</h2>
@@ -37,13 +38,14 @@
                         if ("actualizar".equals(request.getAttribute("operacion"))) {
                     %><h3>Seleccione el registro que desea actualizar:</h3>
                 <ul><%
+// ESTAS REPITIENDO EL MISMO CÓDIGO DONDE LO ÚNICO QUE CAMBIA ES EL INPUT
                     while (it.hasNext()) {
                         Ave ave = it.next();
                     %><li><input type="radio" name="seleccion" value="<%=ave.getAnilla()%>">Anilla: <%=ave.getAnilla()%>; Especie: <%=ave.getEspecie()%></li>
                     <% } %></ul><%
                 %><input type="submit" name="continuar" value="Continuar"><%
                     }
-                    /*Si se desean eliminar datos, se muestran y se permiten elegir varios para hacer un borrado 
+                    /*Si se desean eliminar datos, se muestran y se permiten elegir varios para hacer un borrado
                     multiple */
                     if ("eliminar".equals(request.getAttribute("operacion"))) {
                 %><h3>Selecciones los registros que desea eliminar</h3>

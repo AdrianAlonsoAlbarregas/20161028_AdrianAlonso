@@ -71,6 +71,7 @@ public class ContrInsertar extends HttpServlet {
                     } catch (SQLException e) {
                         /*Se comprueba que los datos no produzcan nngun error en la base de datos (que la anilla este
                         repetida o que la longitud de uno de los campos sea mayor que la de la base de datos)*/
+// COMPRUEBAS LOS ERRORES PERO NO AVISAS DE DUPLICIDAD DE CLAVES
                         url = "jsp/errores.jsp";
                         request.setAttribute("error", "datos");
                     }

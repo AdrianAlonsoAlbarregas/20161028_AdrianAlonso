@@ -56,6 +56,7 @@ public class ContrEnlaces extends HttpServlet {
                 } else {
                     /*Si se elige cualquier otra opcion que no sea insertar, se cargan todas las entradas de la base
                     de datos en una variable para mostrarlas en la siguiente vista*/
+// ESTAS OPERACIONES NO SON NECESARIAS YA QUE DESPUES HACES FORWARD
                     if ("Mostrar".equals(request.getParameter("mostrar"))) {
                         request.setAttribute("operacion", "mostrar");
                     }

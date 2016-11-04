@@ -41,6 +41,7 @@ public class ContrModifDatos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+// SE TE HA OLVIDADO ELIMINAR ESTA LÍNEA AL CREAR EL SERVLET
         try (PrintWriter out = response.getWriter()) {
             Connection conexion = null;
             PreparedStatement sentenciaPrep = null;
@@ -48,7 +49,7 @@ public class ContrModifDatos extends HttpServlet {
             ResultSet resultado = null;
 
             String sql = null;
-
+// NO ENTIENDO PARA QUÉ OBTIENES LA LISTA ENTERA Y ADEMÁS SERÁ NULL
             ArrayList<Ave> lista = (ArrayList<Ave>) request.getAttribute("datos");
             String url = null;
             try {
@@ -82,9 +83,11 @@ public class ContrModifDatos extends HttpServlet {
                     } else {
                         /*Si se desean eliminar datos, se recogen todas las entradas seleccionadas y se procede a
                         eliminarlas de la base de datos*/
+// TIENES QUE PREGUNTAR SI ES CORRECTO ANTES DE ELIMINAR DEFININITIVAMENTE
                         String[] anillas = request.getParameterValues("selecciones");
                         sql = "delete from aves where anilla = ?";
                         try {
+// PODIAS HABER CONSTRUIDO LA CLAUSULA WHERE
                             for (String i : anillas) {
                                 sentenciaPrep = conexion.prepareStatement(sql);
                                 sentenciaPrep.setString(1, i);

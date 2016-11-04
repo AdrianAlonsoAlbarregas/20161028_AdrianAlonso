@@ -52,6 +52,7 @@ public class ContrActualizacion extends HttpServlet {
                     request.setAttribute("error", "actNulo");
                 } else {
                     conexion = datasource.getConnection();
+// POR QUÉ MODIFICAS EL REGISTRO COMPLETO Y SI NO SE HA MODIFICADO NADA
                     sql = "update aves set especie = ?, lugar = ?, fecha = ? where anilla = ?";
                     try {
                         /*Si todo es correcto, se procede a cargar una sentencia de sql con los datos introducidos.
